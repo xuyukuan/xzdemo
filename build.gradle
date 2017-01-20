@@ -1,0 +1,34 @@
+group 'com.yukuan'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE"
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile 'org.codehaus.groovy:groovy-all'
+    compile 'org.webjars:angularjs:1.4.7'
+    compile 'org.webjars:ngInfiniteScroll:1.2.1'
+    compile 'org.webjars:bootstrap:3.3.7'
+    testCompile "junit:junit"
+}
+
+bootRun {
+    addResources = true
+}
