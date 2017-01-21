@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>
-<html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>
-<html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="app" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,20 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="/css/app.css">
+    <base href="/">
 </head>
-<body>
-<h2>Administrator Panel</h2>
-<div class="home-section">
-    <ul class="menu-list">
-        <li><a href="#/users">Users</a></li>
-        <li><a href="#/roles">Roles</a></li>
-    </ul>
-</div>
-<div ng-view></div>
+<body ng-controller="mainController">
+<header></header>
+<div ui-view></div>
 <script src="/webjars/angularjs/1.4.7/angular.js"></script>
-<script src="/webjars/angularjs/1.4.7/angular-resource.js"></script>
-<script src="/webjars/angularjs/1.4.7/angular-route.js"></script>
+<script src="/webjars/angular-ui-router/1.0.0-beta.3/release/angular-ui-router.js"></script>
 <script src="/js/app.js"></script>
+<script src="/js/directives.js"></script>
+<script src="/js/services.js"></script>
 <script src="/js/controllers.js"></script>
 </body>
 </html>
