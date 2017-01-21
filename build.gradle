@@ -26,7 +26,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-devtools'
     compile 'org.codehaus.groovy:groovy-all'
-    compile 'org.codehaus.groovy:http-builder:0.4.0'
+    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
     compile 'org.webjars:angularjs:1.4.7'
     compile 'org.webjars.bower:angular-ui-router:1.0.0-beta.3'
     compile 'org.webjars:ngInfiniteScroll:1.2.1'

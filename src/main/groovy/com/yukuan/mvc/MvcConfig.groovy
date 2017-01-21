@@ -12,7 +12,7 @@ class MvcConfig {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
-                // forward requests to / their index.html
+                // forward requests / to index.html
                 registry.addViewController("/").setViewName("forward:/index.html")
             }
         };
