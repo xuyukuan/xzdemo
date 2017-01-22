@@ -1,4 +1,4 @@
-group 'com.yukuan'
+group 'xuyukuan'
 version '1.0-SNAPSHOT'
 
 buildscript {
