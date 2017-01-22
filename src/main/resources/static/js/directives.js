@@ -5,16 +5,34 @@ app.directive('header', function() {
         replace: true
     };
 });
+app.directive('loadingSpinner', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/loading-spinner.html',
+        replace: true
+    };
+});
 app.directive('login', function() {
     return {
         restrict: 'E',
         templateUrl: 'views/login.html',
-        replace: true,
         scope: {},
         link: function(scope, element, attrs) {
             scope.requestLogin = function() {
                 location.href='requestLogin';
             }
+        }
+    };
+});
+app.directive('weiboItem', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'views/weibo-item.html',
+        scope: {
+            item: '='
+        },
+        link: function(scope, element, attrs) {
+
         }
     };
 });

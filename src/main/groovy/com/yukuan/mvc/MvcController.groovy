@@ -1,5 +1,6 @@
 package com.yukuan.mvc
 
+import com.yukuan.helper.Helper
 import groovy.json.JsonSlurper
 import groovyx.net.http.HTTPBuilder
 import org.springframework.stereotype.Controller
@@ -47,6 +48,6 @@ class MvcController {
         def result = http.get(path: '/statuses/home_timeline.json',
                 query: [access_token: token,
                         count       : count, page: page])
-        return result
+        return Helper.adaptData(result.statuses)
     }
 }
