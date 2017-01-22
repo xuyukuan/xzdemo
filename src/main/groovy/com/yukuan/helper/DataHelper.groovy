@@ -2,7 +2,7 @@ package com.yukuan.helper
 
 import com.yukuan.model.Weibo
 
-class Helper {
+class DataHelper {
     def static adaptData(data) {
         def weiboList = []
         for (item in data) {

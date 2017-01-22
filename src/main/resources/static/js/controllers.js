@@ -17,18 +17,16 @@ app.controller('homeController', ['$scope', '$state', '$stateParams', 'appServic
         });
     }
 
-    if (vm.token) {
-        vm.hideLogin = true;
-        vm.loadWeibo();
-    }
-
     function loadWeibo() {
-        vm.loadingData = true;
-        appService.loadWeibo(vm.token, vm.count, vm.page++).then(function (resp) {
-            vm.loadingData = false;
-            if (resp.data && resp.data.length > 0) {
-                vm.items = vm.items.concat(resp.data);
-            }
-        });
+        if (vm.token) {
+            vm.hideLogin = true;
+            vm.loadingData = true;
+            appService.loadWeibo(vm.token, vm.count, vm.page++).then(function (resp) {
+                vm.loadingData = false;
+                if (resp.data && resp.data.length > 0) {
+                    vm.items = vm.items.concat(resp.data);
+                }
+            });
+        }
     };
 }]);

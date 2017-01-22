@@ -1,5 +1,5 @@
 var app = angular.module('app', ['ui.router', 'infinite-scroll']);
-app.config(function($stateProvider, $locationProvider){
+app.config(function ($stateProvider, $locationProvider) {
     $stateProvider.state({
         name: 'home',
         url: '/?code',
