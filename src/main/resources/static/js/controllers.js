@@ -26,6 +26,11 @@ app.controller('homeController', ['$scope', '$state', '$stateParams', 'appServic
                 if (resp.data && resp.data.length > 0) {
                     vm.items = vm.items.concat(resp.data);
                 }
+            }, function(resp) {
+                if (resp.status === 500) {
+                    vm.loadingData = false;
+                    vm.showWarning = true;
+                }
             });
         }
     };

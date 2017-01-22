@@ -45,6 +45,10 @@ body {
 }
 /*loading spinner end*/
 
+.hand:hover {
+    cursor: pointer;
+}
+
 .weibo-item {
     background: #fafafa;
     padding: 10px;
