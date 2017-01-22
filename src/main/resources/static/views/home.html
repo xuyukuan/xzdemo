@@ -1,13 +1,13 @@
 <div class="container">
     <login ng-if="!vm.hideLogin"></login>
-    <div infinite-scroll="vm.loadWeibo()" infinite-scroll-distance="3">
+    <div infinite-scroll="vm.loadWeibo()" infinite-scroll-distance="0" infinite-scroll-disabled='vm.loadingData'>
         <div class="col-md-8 col-md-offset-2" ng-repeat="item in vm.items">
             <weibo-item item="item"></weibo-item>
         </div>
+        <div class="clearfix"></div>
     </div>
     <loading-spinner ng-if="vm.loadingData"></loading-spinner>
-    <div class="alert alert-warning" ng-show="vm.showWarning">
+    <div class="alert alert-warning" ng-if="vm.showWarning">
         <strong>注意!</strong> 接口调用已超过限制, 请稍后再试...
     </div>
 </div>
-

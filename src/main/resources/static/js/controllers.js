@@ -1,4 +1,4 @@
-app.controller('homeController', ['$scope', '$state', '$stateParams', 'appService', '$window', function ($scope, $state, $stateParams, appService, $window) {
+app.controller('homeController', ['$scope', '$timeout', '$state', '$stateParams', 'appService', '$window', function ($scope, $timeout, $state, $stateParams, appService, $window) {
     var vm = this;
 
     //init data start
@@ -6,6 +6,7 @@ app.controller('homeController', ['$scope', '$state', '$stateParams', 'appServic
     vm.page = 1;
     vm.count = 10; //default count
     vm.items = [];
+    vm.loadingData = false;
     vm.token = $window.sessionStorage.getItem('token_key');
     //init data end
 
@@ -19,6 +20,7 @@ app.controller('homeController', ['$scope', '$state', '$stateParams', 'appServic
 
     function loadWeibo() {
         if (vm.token) {
+          if (vm.loadingData) return;
             vm.hideLogin = true;
             vm.loadingData = true;
             appService.loadWeibo(vm.token, vm.count, vm.page++).then(function (resp) {
